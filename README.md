@@ -1,2 +1,2 @@
-# js-pali
-Javascript browser utilities for the Pali canon
+# js-ebt
+Javascript browser utilities for Early Buddhist Texts
