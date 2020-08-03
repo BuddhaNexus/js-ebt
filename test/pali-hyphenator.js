@@ -173,4 +173,25 @@
         should.deepEqual(ph.hyphenate("parikkhārā").split(hyphen), [
             "parik", "khārā", ]); 
     });
+    it("TESTTESThyphenate(word) => handles long words", ()=>{
+        var hyphen = "\u00ad";
+        var ph = new PaliHyphenator({
+            hyphen,
+            verbose: "",
+        });
+
+        // should not break 
+        var word = "cīvarapiṇḍapātasenāsanagilānap"+
+            "paccayabhesajjaparikkhārena";
+        should.deepEqual(ph.hyphenate(word).split(hyphen), [
+            'cīvara',
+            'piṇḍa',
+            'pātasenā',
+            'sanagilā',
+            'nappacca',
+            'yabhesajja',
+            'parik',
+            'khārena'
+        ]);
+    });
 });
